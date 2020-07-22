@@ -21,18 +21,20 @@ const useStyle = makeStyles({
         width: 300,
     },
     gridContainer: {
-        paddingLeft: '20px',
-        paddingRight: '20px',
+        paddingLeft: '2em',
+        paddingRight: '2em',
+        paddingTop: '2em',
+        paddingBottom: '2em',
       },
 })
 export default function Cardgen () {
     const classes = useStyle();
     return (
         <Grid container direction="row" className={classes.gridContainer}>
-            <Grid item xs={12}>
+            <Grid item xs='auto'>
                 <Grid container spacing={5}>
                     {Object.keys(datas).map(key => (
-                        <Grid key={key} item xs={3}>
+                        <Grid key={key} item>
                         <Card className={classes.root} variant="outlined">
                     <CardHeader
                         avatar={<Avatar src={`${datas[key].logo_url}`} />}
